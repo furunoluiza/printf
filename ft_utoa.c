@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:22:55 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/22 09:22:58 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:01:33 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static int	count_num(unsigned long c)
 
 char	*ft_utoa(unsigned long c, char *hex)
 {
-	char *p;
-	int	i;
+	char	*p;
+	int		i;
 
 	i = count_num(c);
 	p = malloc((i + 1) * sizeof(char));

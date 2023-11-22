@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:36:25 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/22 09:18:07 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:14:30 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	print_pointer(unsigned long c)
 {
-	char *ptr;
-	int	count;
+	char	*ptr;
+	int		count;
 
 	count = 0;
 	count = print_string("0x");
