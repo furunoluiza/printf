@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_char.c                                       :+:      :+:    :+:   */
+/*   print_decimal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 20:11:43 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/21 13:29:41 by lfuruno-         ###   ########.fr       */
+/*   Created: 2023/11/21 21:22:46 by lfuruno-          #+#    #+#             */
+/*   Updated: 2023/11/21 21:40:03 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	print_char(int c)
+int	print_decimal(long n)
 {
-	write (1, &c, 1);
-	return (1);
+	int	count;
+
+	count = ft_putnbr(long n);
+	return (count);
 }
