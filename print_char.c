@@ -6,9 +6,11 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:11:43 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/21 13:29:41 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/22 08:56:36 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	print_char(int c)
 {

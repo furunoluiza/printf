@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utoa.c                                             :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 20:59:31 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/21 20:59:44 by lfuruno-         ###   ########.fr       */
+/*   Created: 2023/11/22 09:22:55 by lfuruno-          #+#    #+#             */
+/*   Updated: 2023/11/22 09:22:58 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 static int	count_num(unsigned long c)
 {
@@ -23,7 +25,7 @@ static int	count_num(unsigned long c)
 	return (i);
 }
 
-char	*utoa(unsigned long c, char *hex)
+char	*ft_utoa(unsigned long c, char *hex)
 {
 	char *p;
 	int	i;
@@ -44,11 +46,11 @@ char	*utoa(unsigned long c, char *hex)
 	return (p);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void)
 {
 	int	c;
 	c = 255;
 	char *p = "0123456789abcdef";
-	printf("%s", utoa(c, p));
-}
+	printf("%s", ft_utoa(c, p));
+}*/

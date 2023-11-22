@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:50:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/21 17:10:07 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/22 08:56:06 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,12 @@ int	handle_print(const char fmt, va_list ap)
 		return (print_char(va_arg(ap, int)));
 	if (fmt == 's')
 		return (print_string(va_arg(ap, int)));
-	if (fmt == 'p' || fmt == 'x' || fmt == 'X')
-		return (print_hex(va_arg(ap, unsigned long), fmt));
+	if (fmt == 'p')
+		return (print_pointer(va_arg(ap, unsigned long), "0123456789abcdef"));
+	if (fmt == 'x')
+		return (print_lower_hex(va_arg(ap, unsigned long), "0123456789abcdef"));
+	if (fmt == 'X')
+		return (print_upper_hex(va_arg(ap, unsigned long), "0123456789ABCDEF"));
 	if (fmt == 'i' || fmt == 'u' || fmt == 'd')
-		return (
-
+		return (print_decimal(va_arg(ap, unsigned long)));
 } 

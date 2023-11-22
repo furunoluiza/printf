@@ -1,4 +1,5 @@
-SRC = 
+SRC = ft_printf.c ft_putnbr.c print_char.c print_decimal.c print_lower_x.c /
+	  print_pointer.c print_string.c print_upper_x.c ft_utoa.c
 NAME = libftprintf.a
 OBJ = $(SRC:.c=.o)
 CC = cc
