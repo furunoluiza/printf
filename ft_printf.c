@@ -6,11 +6,33 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:50:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/22 11:19:00 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:39:55 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	handle_print(const char fmt, va_list ap)
+{
+	int	count;
+
+	count = 0;
+	if (fmt == 'c')
+		count+= print_char(va_arg(ap, int));
+	else if (fmt == 's')
+		count+= print_string(va_arg(ap, char *));
+	else if (fmt == 'p')
+		count+= print_pointer(va_arg(ap, void *));
+	else if (fmt == 'x')
+		count+= print_lower_hex(va_arg(ap, unsigned long));
+	else if (fmt == 'X')
+		count+= print_upper_hex(va_arg(ap, unsigned long));
+	else if (fmt == 'i' || fmt == 'u' || fmt == 'd')
+		count+= print_decimal(va_arg(ap, unsigned long));
+	else if (fmt == '%')
+		count+= print_char(fmt);
+	return (count);
+}
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -24,31 +46,15 @@ int	ft_printf(const char *fmt, ...)
 		if (*fmt == '%')
 		{
 			fmt++;
-			write_count += handle_print(*fmt);
+			write_count += handle_print(*fmt, ap);
 		}
 		else
+		{
 			write(1, &fmt, 1);
+			write_count += 1;
+		}
 		fmt++;
-		write_count++;
 	}
 	va_end(ap);
 	return (write_count);
-}
-
-int	handle_print(const char fmt, va_list ap)
-{
-	if (fmt == 'c')
-		return (print_char(va_arg(ap, int)));
-	if (fmt == 's')
-		return (print_string(va_arg(ap, int)));
-	if (fmt == 'p')
-		return (print_pointer(va_arg(ap, unsigned long), "0123456789abcdef"));
-	if (fmt == 'x')
-		return (print_lower_hex(va_arg(ap, unsigned long), "0123456789abcdef"));
-	if (fmt == 'X')
-		return (print_upper_hex(va_arg(ap, unsigned long), "0123456789ABCDEF"));
-	if (fmt == 'i' || fmt == 'u' || fmt == 'd')
-		return (print_decimal(va_arg(ap, unsigned long)));
-	if (fmt == '%')
-		return (print_char(va_arg(ap, int)));
 }

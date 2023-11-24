@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:22:46 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/22 09:18:49 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:39:16 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	print_decimal(long n)
 {
 	int	count;
 
-	count = ft_putnbr(long n);
+	count = ft_putnbr(n);
 	return (count);
 }

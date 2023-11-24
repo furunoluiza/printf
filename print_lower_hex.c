@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_lower_x.c                                    :+:      :+:    :+:   */
+/*   print_lower_hex.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 20:57:44 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/22 11:12:43 by lfuruno-         ###   ########.fr       */
+/*   Created: 2023/11/23 15:56:51 by lfuruno-          #+#    #+#             */
+/*   Updated: 2023/11/23 16:03:14 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_lower_x(unsigned long c)
+int	print_lower_hex(unsigned long c)
 {
 	char	*ptr;
 	int		count;

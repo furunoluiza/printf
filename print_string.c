@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:39:58 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/22 11:15:13 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:18:23 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	print_string(char *c)
 
 	i = 0;
 	if (!c)
-		return (NULL);
+		c = "(null)";
 	while (c[i] != '\0')
 	{
 		write(1, &c, 1);

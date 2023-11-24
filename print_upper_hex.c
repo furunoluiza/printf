@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_pointer.c                                    :+:      :+:    :+:   */
+/*   print_upper_hex.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 18:36:25 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/23 21:45:23 by lfuruno-         ###   ########.fr       */
+/*   Created: 2023/11/23 15:56:35 by lfuruno-          #+#    #+#             */
+/*   Updated: 2023/11/23 16:03:00 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_pointer(void *p)
+int	print_upper_hex(unsigned long c)
 {
-	char				*str;
-	int					count;
-	unsigned long long	adress;
+	char	*ptr;
+	int		count;
 
 	count = 0;
-	adress = (unsigned long long)p;
-	if (!adress)
-	{
-		count = print_string("(nil)");
-		return (count);
-	}
-	count = print_string("0x");
-	str = ft_utoa(adress, "0123456789abcdef");
-	count += print_string(str);
-	free(str);
+	ptr = ft_utoa(c, "0123456789ABCDEF");
+	count += print_string(ptr);
+	free(ptr);
 	return (count);
 }

@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_upper_x.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 21:02:31 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/22 11:13:21 by lfuruno-         ###   ########.fr       */
+/*   Created: 2023/11/23 20:54:50 by lfuruno-          #+#    #+#             */
+/*   Updated: 2023/11/23 21:11:04 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-int	print_upper_x(unsigned long c)
+int	main(void)
 {
-	char	*ptr;
-	int		count;
-
-	count = 0;
-	ptr = ft_utoa(c, "0123456789ABCDEF");
-	count += print_string(ptr);
-	free(ptr);
-	return (count);
+	printf("%s", "");
+	ft_printf("%s", "");
+	return(0);
 }

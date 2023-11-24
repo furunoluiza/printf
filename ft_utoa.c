@@ -45,7 +45,6 @@ char	*ft_utoa(unsigned long c, char *hex)
 		p[i] = hex[c];
 	return (p);
 }
-
 /*#include <stdio.h>
 int main(void)
 {
