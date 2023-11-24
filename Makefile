@@ -1,7 +1,7 @@
-SRC = ft_printf.c ft_putnbr.c \
-	print_char.c print_decimal.c \
-	print_lower_hex.c print_pointer.c \
-	print_string.c print_upper_hex.c ft_utoa.c
+SRC = ft_printf.c ft_utoa.c \
+	print_char.c print_string.c print_pointer.c \
+	print_signed_decimal.c print_unsigned_decimal.c \
+	print_lower_hex.c print_upper_hex.c
 NAME = libftprintf.a
 OBJ = $(SRC:.c=.o)
 CC = cc

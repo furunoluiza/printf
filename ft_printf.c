@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:50:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/23 21:39:55 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:36:14 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@ static int	handle_print(const char fmt, va_list ap)
 
 	count = 0;
 	if (fmt == 'c')
-		count+= print_char(va_arg(ap, int));
+		count += print_char(va_arg(ap, int));
 	else if (fmt == 's')
-		count+= print_string(va_arg(ap, char *));
+		count += print_string(va_arg(ap, char *));
 	else if (fmt == 'p')
-		count+= print_pointer(va_arg(ap, void *));
+		count += print_pointer(va_arg(ap, void *));
 	else if (fmt == 'x')
-		count+= print_lower_hex(va_arg(ap, unsigned long));
+		count += print_lower_hex(va_arg(ap, unsigned long));
 	else if (fmt == 'X')
-		count+= print_upper_hex(va_arg(ap, unsigned long));
-	else if (fmt == 'i' || fmt == 'u' || fmt == 'd')
-		count+= print_decimal(va_arg(ap, unsigned long));
+		count += print_upper_hex(va_arg(ap, unsigned long));
+	else if (fmt == 'u')
+		count += print_unsigned_decimal(va_arg(ap, unsigned long); 
+	else if (fmt == 'i' || fmt == 'd')
+		count += print_signed_decimal(va_arg(ap, long));
 	else if (fmt == '%')
-		count+= print_char(fmt);
+		count += print_char(fmt);
 	return (count);
 }
 

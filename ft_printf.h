@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:44:30 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/23 21:44:56 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:55:23 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int		print_string(char *c);
 int		print_pointer(void *p);
 int		print_lower_hex(unsigned long c);
 int		print_upper_hex(unsigned long c);
-int		print_decimal(long n);
-int		ft_putnbr(long n);
-char	*ft_utoa(unsigned long c, char *hex);
+int		print_signed_decimal(long n);
+int		print_unsigned_decimal(unsigned long n);
+char	*ft_utoa(unsigned long c, char *str);
 
 #endif
