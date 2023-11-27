@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 20:54:50 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/23 21:11:04 by lfuruno-         ###   ########.fr       */
+/*   Created: 2023/11/27 10:18:30 by lfuruno-          #+#    #+#             */
+/*   Updated: 2023/11/27 10:18:55 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
-
-int	main(void)
+char	*ft_strchr(const char *s, int c)
 {
-	printf("%s", "");
-	ft_printf("%s", "");
-	return(0);
+	unsigned char	*a;
+
+	a = ((unsigned char *) s);
+	while (*a)
+		a++;
+	if (c == '\0')
+		return ((char *) a);
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *) s);
+		s++;
+	}
+	return (0);
 }

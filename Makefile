@@ -1,4 +1,4 @@
-SRC = ft_printf.c ft_utoa.c \
+SRC = ft_printf.c ft_utoa.c ft_strchr.c\
 	print_char.c print_string.c print_pointer.c \
 	print_signed_decimal.c print_unsigned_decimal.c \
 	print_lower_hex.c print_upper_hex.c

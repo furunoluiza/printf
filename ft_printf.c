@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:50:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/24 13:36:14 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:47:27 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static int	handle_print(const char fmt, va_list ap)
 	else if (fmt == 'X')
 		count += print_upper_hex(va_arg(ap, unsigned long));
 	else if (fmt == 'u')
-		count += print_unsigned_decimal(va_arg(ap, unsigned long); 
+		count += print_unsigned_decimal(va_arg(ap, unsigned long));
 	else if (fmt == 'i' || fmt == 'd')
-		count += print_signed_decimal(va_arg(ap, long));
+		count += print_signed_decimal(va_arg(ap, int));
 	else if (fmt == '%')
 		count += print_char(fmt);
 	return (count);
@@ -45,14 +45,13 @@ int	ft_printf(const char *fmt, ...)
 	va_start(ap, fmt);
 	while (*fmt)
 	{
-		if (*fmt == '%')
+		if (*fmt == '%' && ft_strchr("cspdiuxX%", ++fmt))
 		{
-			fmt++;
-			write_count += handle_print(*fmt, ap);
+			write_count += handle_print(fmt, ap);
 		}
 		else
 		{
-			write(1, &fmt, 1);
+			write(1, &(*fmt), 1);
 			write_count += 1;
 		}
 		fmt++;

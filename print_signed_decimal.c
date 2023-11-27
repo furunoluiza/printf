@@ -6,34 +6,80 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:41:11 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/24 13:41:55 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:46:25 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_signed_decimal(long n)
+static int	ft_contmem(long n)
 {
-	int	count;
+	int	i;
 
-	count = 0;
+	i = 0;
 	if (n < 0)
 	{
-		n = n * (-1);
-		write (1, "-", 1);
-		print_signed_decimal(n);
-		count++;
+		n *= -1;
+		i++;
 	}
-	else if (n > 9)
+	if (n == 0)
+		i++;
+	while (n != 0)
 	{
-		print_signed_decimal(n / 10);
-		print_signed_decimal(n % 10);
+		n = n / 10;
+		i++;
 	}
-	else
+	return (i);
+}
+
+static char	*ft_itoa(int n)
+{
+	int		i;
+	long	numb;
+	char	*p;
+
+	numb = n;
+	i = ft_contmem(numb);
+	p = malloc ((i + 1) * sizeof(char));
+	if (!p)
+		return (NULL);
+	if (numb < 0)
 	{
-		n = n + 48;
-		write (1, &n, 1);
-		count++;
+		numb *= -1;
+		p[0] = '-';
 	}
+	p[i] = '\0';
+	i--;
+	if (numb == 0)
+		p[i] = numb + 48;
+	while (numb > 0)
+	{
+		p[i] = (numb % 10) + 48;
+		numb = numb / 10;
+		i--;
+	}
+	return (p);
+}
+
+int	print_signed_decimal(int n)
+{
+	int		count;
+	char	*str;
+
+	count = 0;
+	str = ft_itoa(n);
+	count = print_string(str);
+	free (str);
 	return (count);
 }
+/*#include <stdio.h>
+int	main()
+{
+//	int	i = print_signed_decimal(-2147483648);
+//	int	j = print_signed_decimal(-42);
+//	int	u = print_signed_decimal(0);
+//	int	y = print_signed_decimal(8);
+	int	h = print_signed_decimal(-2148);
+	printf("\n%d", h);
+//	printf("%d\n %d\n %d\n %d\n %d\n", i, j, u ,y, h);
+}*/

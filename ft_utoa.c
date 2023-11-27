@@ -6,17 +6,29 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:22:55 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/24 14:15:26 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:44:48 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static int	ft_strlen(char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
+}
+
 static int	count_num(unsigned long c, int base)
 {
 	int	i;
 
-	i = 0; 
+	i = 0;
+	if (c == 0)
+		return (1);
 	while (c != 0)
 	{
 		c = c / base;
@@ -27,9 +39,9 @@ static int	count_num(unsigned long c, int base)
 
 char	*ft_utoa(unsigned long c, char *str)
 {
-	char	*p;
-	int		i;
-	int		base;
+	char			*p;
+	int				i;
+	unsigned int	base;
 
 	base = ft_strlen(str);
 	i = count_num(c, base);
@@ -37,21 +49,21 @@ char	*ft_utoa(unsigned long c, char *str)
 	if (!p)
 		return (0);
 	p[i--] = '\0';
-	while (c > base)
+	if (c == 0)
+		p[i] = str[0];
+	while (c > 0)
 	{
 		p[i] = str[(c % base)];
 		c = c / base;
 		i--;
 	}
-	if (c <= base)
-		p[i] = str[c];
 	return (p);
 }
 /*#include <stdio.h>
 int main(void)
 {
 	int	c;
-	c = 255;
-	char *p = "0123456789abcdef";
+	c = 0;
+	char *p = "0123456789";
 	printf("%s", ft_utoa(c, p));
 }*/
