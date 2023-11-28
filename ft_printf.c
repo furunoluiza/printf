@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:50:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/27 10:47:27 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:50:22 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int	ft_printf(const char *fmt, ...)
 	va_start(ap, fmt);
 	while (*fmt)
 	{
-		if (*fmt == '%' && ft_strchr("cspdiuxX%", ++fmt))
+		if (*fmt == '%' && ft_strchr("cspdiuxX%", *++fmt))
 		{
-			write_count += handle_print(fmt, ap);
+			write_count += handle_print(*fmt, ap);
 		}
 		else
 		{
