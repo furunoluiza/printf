@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:50:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/28 10:50:22 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/30 09:12:43 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ static int	handle_print(const char fmt, va_list ap)
 	else if (fmt == 'p')
 		count += print_pointer(va_arg(ap, void *));
 	else if (fmt == 'x')
-		count += print_lower_hex(va_arg(ap, unsigned long));
+		count += print_lower_hex(va_arg(ap, unsigned int));
 	else if (fmt == 'X')
-		count += print_upper_hex(va_arg(ap, unsigned long));
+		count += print_upper_hex(va_arg(ap, unsigned int));
 	else if (fmt == 'u')
-		count += print_unsigned_decimal(va_arg(ap, unsigned long));
+		count += print_unsigned_decimal(va_arg(ap, unsigned int));
 	else if (fmt == 'i' || fmt == 'd')
 		count += print_signed_decimal(va_arg(ap, int));
 	else if (fmt == '%')

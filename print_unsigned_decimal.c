@@ -6,13 +6,13 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:42:15 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/27 09:55:22 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/30 09:11:12 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_unsigned_decimal(unsigned long n)
+int	print_unsigned_decimal(unsigned int n)
 {
 	char	*ptr;
 	int		count;
