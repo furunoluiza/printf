@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	ft_contmem(long n)
+static int	ft_contmem(int n)
 {
 	int	i;
 
