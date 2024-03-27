@@ -14,10 +14,12 @@ The objective of this project is to recreate the `printf` function from the stan
    git clone git@github.com:furunoluiza/printf.git
 
 2. Compile the project. You can use the provided makefile:
+   
    ```
    make
 
-3. Now you can use the ft_printf function in your C programs just like the standard printf function:
+4. Now you can use the ft_printf function in your C programs just like the standard printf function:
+   
    ```
    #include "ft_printf.h"
 
@@ -26,3 +28,8 @@ The objective of this project is to recreate the `printf` function from the stan
     ft_printf("Hey, %s! You are %d years old.\n", "Harry", 18);
     return 0;
    }
+
+5. Compile your printf function with the printf library file generated:
+   
+    ```
+    cc your_main.c libftprintf.a 
