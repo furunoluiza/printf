@@ -11,7 +11,7 @@ The objective of this project is to recreate the `printf` function from the stan
 1. Clone this repository to your local machine and enter in the directory:
 
    ```shell
-   git clone git@github.com:furunoluiza/printf.git cd printf
+   git clone git@github.com:furunoluiza/printf.git && cd printf
 
 2. Compile the project. You can use the provided makefile:
    
