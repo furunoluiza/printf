@@ -8,10 +8,10 @@ The objective of this project is to recreate the `printf` function from the stan
 
 ## How to Use
 
-1. Clone this repository to your local machine:
+1. Clone this repository to your local machine and enter in the directory:
 
    ```shell
-   git clone git@github.com:furunoluiza/printf.git
+   git clone git@github.com:furunoluiza/printf.git cd printf
 
 2. Compile the project. You can use the provided makefile:
    
